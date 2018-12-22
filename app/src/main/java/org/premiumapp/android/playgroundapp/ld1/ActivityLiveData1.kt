@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
-import kotlinx.android.synthetic.main.activity_live_data1.*
+import kotlinx.android.synthetic.main.activity_live_data_mediator.*
 import org.premiumapp.android.playgroundapp.R
 
 class ActivityLiveData1 : AppCompatActivity() {
@@ -13,7 +13,7 @@ class ActivityLiveData1 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_live_data1)
+        setContentView(R.layout.activity_ld_first)
 
         btn_generate_A.setOnClickListener {
             val random = generateRandomNumber()

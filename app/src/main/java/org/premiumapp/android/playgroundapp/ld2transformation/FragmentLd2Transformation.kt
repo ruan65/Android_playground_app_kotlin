@@ -31,7 +31,7 @@ class FragmentLd2Transformation : Fragment() {
     }
 
     private val changeLiveData1Observer = Observer<String> {
-        it?.let { tv_fragment_1_display.text = it }
+        it?.let { tv_fragment_mediator_display.text = it }
     }
 
 

@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
-import kotlinx.android.synthetic.main.activity_live_data1.*
+import kotlinx.android.synthetic.main.activity_live_data_mediator.*
 import org.premiumapp.android.playgroundapp.R
 
 class ActivityLiveDataMediator : AppCompatActivity() {
@@ -21,6 +21,12 @@ class ActivityLiveDataMediator : AppCompatActivity() {
             val random = generateRandomNumber()
             liveDataA.postValue(random.toString())
             tv_ld1_display.text = random.toString()
+        }
+
+        btn_generate_B.setOnClickListener {
+            val random = generateRandomNumber()
+            liveDataB.postValue(random.toString())
+            tv_ld1_display_B.text = random.toString()
         }
 
         btn_fragment_control.setOnClickListener {

@@ -13,7 +13,7 @@
             android:text="==nothing transformed=="
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_fragment_1_display" app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/tv_fragment_mediator_display" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

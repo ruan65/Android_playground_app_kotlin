@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
-import kotlinx.android.synthetic.main.activity_live_data1.*
+import kotlinx.android.synthetic.main.activity_live_data_mediator.*
 import org.premiumapp.android.playgroundapp.R
 
 class ActivityLiveData2Transformation : AppCompatActivity() {
