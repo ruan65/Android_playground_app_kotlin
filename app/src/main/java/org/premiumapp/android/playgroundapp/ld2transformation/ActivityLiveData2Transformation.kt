@@ -15,7 +15,7 @@ class ActivityLiveData2Transformation : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_live_data2)
 
-        btn_generate.setOnClickListener {
+        btn_generate_A.setOnClickListener {
             val random = generateRandomNumber()
             liveData.postValue(random.toString())
             tv_ld1_display.text = random.toString()

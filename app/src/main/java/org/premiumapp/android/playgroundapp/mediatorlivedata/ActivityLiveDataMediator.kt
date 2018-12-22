@@ -1,4 +1,4 @@
-package org.premiumapp.android.playgroundapp.ld1
+package org.premiumapp.android.playgroundapp.mediatorlivedata
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -7,24 +7,26 @@ import androidx.lifecycle.MutableLiveData
 import kotlinx.android.synthetic.main.activity_live_data1.*
 import org.premiumapp.android.playgroundapp.R
 
-class ActivityLiveData1 : AppCompatActivity() {
+class ActivityLiveDataMediator : AppCompatActivity() {
 
-    val liveData1 = MutableLiveData<String>()
+    val liveDataA = MutableLiveData<String>()
+    val liveDataB = MutableLiveData<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_live_data1)
+        setContentView(R.layout.activity_live_data_mediator)
+        title = "Mediator"
 
         btn_generate_A.setOnClickListener {
             val random = generateRandomNumber()
-            liveData1.postValue(random.toString())
+            liveDataA.postValue(random.toString())
             tv_ld1_display.text = random.toString()
         }
 
         btn_fragment_control.setOnClickListener {
             if (supportFragmentManager.backStackEntryCount == 0) {
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.container_fragment_ld1, FragmentLd1())
+                    .replace(R.id.container_fragment_ld1, FragmentLdMediator())
                     .addToBackStack("Fragment ld 1")
                     .commit()
             } else {

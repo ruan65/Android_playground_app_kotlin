@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ld2transformation.ActivityLiveData2Transformation"/>
+        <activity android:name=".mediatorlivedata.ActivityLiveDataMediator"/>
     </application>
 
 </manifest>
