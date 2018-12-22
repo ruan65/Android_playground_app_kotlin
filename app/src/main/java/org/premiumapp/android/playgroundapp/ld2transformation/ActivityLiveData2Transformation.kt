@@ -1,4 +1,4 @@
-package org.premiumapp.android.playgroundapp.ld1
+package org.premiumapp.android.playgroundapp.ld2transformation
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -7,24 +7,24 @@ import androidx.lifecycle.MutableLiveData
 import kotlinx.android.synthetic.main.activity_live_data1.*
 import org.premiumapp.android.playgroundapp.R
 
-class ActivityLiveData1 : AppCompatActivity() {
+class ActivityLiveData2Transformation : AppCompatActivity() {
 
-    val liveData1 = MutableLiveData<String>()
+    val liveData = MutableLiveData<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_live_data1)
+        setContentView(R.layout.activity_live_data2)
 
         btn_generate.setOnClickListener {
             val random = generateRandomNumber()
-            liveData1.postValue(random.toString())
+            liveData.postValue(random.toString())
             tv_ld1_display.text = random.toString()
         }
 
         btn_fragment_control.setOnClickListener {
             if (supportFragmentManager.backStackEntryCount == 0) {
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.container_fragment_ld1, FragmentLd1())
+                    .replace(R.id.container_fragment_ld1, FragmentLd2Transformation())
                     .addToBackStack("Fragment ld 1")
                     .commit()
             } else {

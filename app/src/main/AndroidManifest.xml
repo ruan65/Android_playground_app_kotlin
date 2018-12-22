@@ -18,6 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".ld2transformation.ActivityLiveData2Transformation"/>
     </application>
 
 </manifest>
