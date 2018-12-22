@@ -14,16 +14,38 @@ class ActivityLiveData1 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_live_data1)
 
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.container_fragment_ld1, FragmentLd1())
-            .commit()
-
         btn_generate.setOnClickListener {
             val random = generateRandomNumber()
-            liveData1.value = random.toString()
+            liveData1.postValue(random.toString())
             tv_ld1_display.text = random.toString()
+        }
+
+        btn_fragment_control.setOnClickListener {
+            if (supportFragmentManager.backStackEntryCount == 0) {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container_fragment_ld1, FragmentLd1())
+                    .addToBackStack("Fragment ld 1")
+                    .commit()
+            } else {
+                supportFragmentManager.popBackStack()
+            }
+        }
+
+        supportFragmentManager.addOnBackStackChangedListener {
+
+            setFragmentControlButtonText()
+        }
+        setFragmentControlButtonText()
+    }
+
+    private fun setFragmentControlButtonText() {
+
+        if (supportFragmentManager.backStackEntryCount == 0) {
+            btn_fragment_control.text = "Add fragment"
+        } else {
+            btn_fragment_control.text = "Remove fragment"
         }
     }
 
-    public fun generateRandomNumber() = (100_000..1000_000).shuffled().last()
+    fun generateRandomNumber() = (100_000..1000_000).random()
 }
