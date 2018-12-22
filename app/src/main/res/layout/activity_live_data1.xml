@@ -24,7 +24,7 @@
             android:layout_marginEnd="16dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="16dp"/>
     <Button
-            android:text="Button"
+            android:text="Generate random"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_generate" android:layout_marginTop="32dp"
